@@ -7,8 +7,8 @@ css
 javaScript
 react.JS
 
-# repo link :
-# live link :
+# repo link :  https://github.com/BalramApply/Numbering-game
+# live link : https://numberinggame.netlify.app/
 
 # React + Vite
 
