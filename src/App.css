@@ -1,0 +1,103 @@
+@keyframes borderPulse {
+  0% {
+    border-color: #471b0b;
+  }
+  50% {
+    border-color: #2c1250;
+  }
+  100% {
+    border-color: #114a13;
+  }
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: rgb(22, 99, 224);
+}
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+h1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #4CAF50;
+  color: rgb(21, 8, 46);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 10px 5px 5px rgb(3, 13, 89);
+  border: 3px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  animation: borderPulse 2s infinite;
+}
+
+.card-opened {
+  background-color: #FF5733; /* New background color for opened cards */
+  border-color: #0a0526;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #090909;
+  outline: none;
+  font-size: 1em;
+  background-color: aqua;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 400;
+  color: rgb(169, 237, 9);
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:disabled {
+  background-color: #ad2f36;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #4c1ad6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  input{
+    width: 30%;
+  }
+  button{
+    height: 40px;
+  }
+}
