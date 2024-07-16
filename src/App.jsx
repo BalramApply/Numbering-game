@@ -7,6 +7,7 @@ function App() {
   const [numCards, setNumCards] = useState("");
   const [cards, setCards] = useState([]);
   const [allOpened, setAllOpened] = useState(false);
+  const [inputDisabled, setInputDisabled] = useState(false); // State to manage input disable
 
   function play1(){
     new Audio(sound1).play()
@@ -33,6 +34,7 @@ function App() {
       showNumber: false,
     }));
     setCards(newCards);
+    setInputDisabled(true); // Disable input after generating cards
     setAllOpened(false);
     play2();
   };
@@ -49,13 +51,16 @@ function App() {
   useEffect(() => {
     const opened = cards.every(card => card.showNumber);
     setAllOpened(opened);
+    if (opened) {
+      setInputDisabled(false); // Enable input when all cards are opened
+    }
   }, [cards]);
 
   return (
     <div className="App">
       <h1>Numbering Game</h1>
       <div>
-        <input type="number" value={numCards} onChange={handleChange} />
+        <input type="number" value={numCards} onChange={handleChange} disabled={inputDisabled}/>
         <button onClick={generateCards} disabled={!allOpened}>
           Generate Numbering
         </button>
