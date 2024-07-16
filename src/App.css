@@ -33,7 +33,7 @@ h1{
 }
 
 .card {
-  background-color: #4CAF50;
+  background-color: #1089d0;
   color: rgb(21, 8, 46);
   padding: 20px;
   margin: 10px;
@@ -41,15 +41,20 @@ h1{
   width: 100px;
   text-align: center;
   font-size: 1.5em;
+  font-weight: bolder;
   cursor: pointer;
   box-shadow: 10px 5px 5px rgb(3, 13, 89);
-  border: 3px solid transparent;
+  border: 5px solid transparent;
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
   animation: borderPulse 2s infinite;
 }
 
 .card-opened {
-  background-color: #FF5733; /* New background color for opened cards */
+  background-image: url("./assets/card.jpg");
+  color: rgb(0, 0, 0);
+  background-size: cover;
+  font-size: 1.5em;
+  font-weight: bolder;
   border-color: #0a0526;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

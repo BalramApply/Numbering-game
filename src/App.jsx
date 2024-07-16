@@ -1,3 +1,5 @@
+import sound1 from "./assets/sound1.mp3";
+import sound2 from "./assets/sound2.mp3";
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -6,6 +8,12 @@ function App() {
   const [cards, setCards] = useState([]);
   const [allOpened, setAllOpened] = useState(false);
 
+  function play1(){
+    new Audio(sound1).play()
+  }
+  function play2(){
+    new Audio(sound2).play()
+  }
   const handleChange = (e) => {
     setNumCards(e.target.value);
   };
@@ -26,12 +34,16 @@ function App() {
     }));
     setCards(newCards);
     setAllOpened(false);
+    play2();
   };
 
   const toggleCardNumber = (index) => {
     const newCards = [...cards];
-    newCards[index].showNumber = !newCards[index].showNumber;
-    setCards(newCards);
+    if (!newCards[index].showNumber) {
+      newCards[index].showNumber = true;
+      setCards(newCards);
+      play1();
+    }
   };
 
   useEffect(() => {
