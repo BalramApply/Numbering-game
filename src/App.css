@@ -80,8 +80,8 @@ button {
   padding: 10px 20px;
   font-size: 1em;
   font-weight: 400;
-  color: rgb(169, 237, 9);
-  background-color: #4CAF50;
+  color: rgb(0, 248, 9);
+  background-color: #0909e1;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -89,7 +89,9 @@ button {
 }
 
 button:disabled {
-  background-color: #ad2f36;
+  background-color: white;
+  font-weight: bold;
+  color: black;
   cursor: not-allowed;
 }
 
